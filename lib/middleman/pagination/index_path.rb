@@ -38,14 +38,14 @@ module Middleman
       end
 
       def index_file_pattern
-        index_file_ext = File.extname(extension_context.index_file)
-        index_file_path = extension_context.index_file.delete(index_file_ext)
+        index_file_ext = File.extname(extension_context.config[:index_file])
+        index_file_path = extension_context.config[:index_file].delete(index_file_ext)
 
         %r{
           (/)?                                # An optional slash
           #{Regexp.escape(index_file_path)}   # Followed by the index path (usually "index")
           (#{Regexp.escape(index_file_ext)})  # Followed by the index extension (usually ".html")
-          $                                   # Followed by the end of the string  
+          $                                   # Followed by the end of the string
         }x
       end
 
