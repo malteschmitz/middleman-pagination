@@ -58,7 +58,7 @@ module Middleman
 
       def add_pagination_to(resource, attributes = {})
         in_page_context = InPageContext.new(attributes)
-        resource.add_metadata(locals: { 'pagination' => in_page_context })
+        resource.add_metadata(locals: { 'pagination_context' => in_page_context })
       end
       
       def pagination_data(resource, key)

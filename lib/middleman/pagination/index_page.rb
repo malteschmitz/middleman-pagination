@@ -38,7 +38,7 @@ module Middleman
       end
 
       def locals
-        index_locals.merge({ pagination: in_page_context })
+        index_locals.merge({ pagination_context: in_page_context })
       end
 
       def in_page_context
